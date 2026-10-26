@@ -1,0 +1,37 @@
+@startuml
+entity "usuario" as usuario{
+    *id_usuario: INT <<PK>>
+    --
+    *nombre:VARCHAR(100)
+    *email:VARCHAR(100)
+    *pasword:VARCHAR(10)
+}
+
+entity "Almacenista" as Almacenista{
+    *id: INT <<PK>>
+    --
+    *nombre:VARCHAR(100)
+    *email:VARCHAR(100)
+    *pasword:VARCHAR(10)
+}
+entity "productos" as productos{
+    *id_producto: INT <<PK>>
+    --
+    *nombreProducto:VARCHAR(100)
+    *precio:Double
+}
+entity "pedidos" as pedidos{
+    *id_pedido: INT <<PK>>
+    --
+    *id_producto: INT <<FK>>
+    *id_usuario: INT <<FK>>
+    *cantidad: INT
+    *fecha: LocalDate
+}
+usuario ||--o{ pedidos : realiza
+productos ||--o{ pedidos : incluye
+
+
+
+
+@enduml

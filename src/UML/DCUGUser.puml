@@ -1,0 +1,22 @@
+@startuml
+left to right direction 
+
+actor Usuario
+
+rectangle "Gestion de usuario "{
+    usecase "Registro" as UC1
+    usecase "Consultar datos" as UC2
+    usecase "Validar informacion" as UC3
+    usecase "Ver productos" as UC4
+    usecase "Realizar pedido" as UC5
+    usecase "Ver informacion de pedido" as UC6
+}
+    Usuario -- UC1
+    Usuario -- UC2
+    Usuario -- UC3
+    Usuario -- UC4
+    UC1 .> UC2 : <<Extend>>
+    UC1 .> UC3 : <<Extend>>
+    UC3 .> UC5 : <<Extend>>
+    UC3 .> UC6 : <<Extend>>
+@enduml

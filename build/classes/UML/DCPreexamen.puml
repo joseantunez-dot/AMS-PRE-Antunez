@@ -1,0 +1,48 @@
+@startuml
+left to right direction
+class Usuario{
+
+    -id: String
+    -userName: String
+    -email: String
+    -password: String
+--
+    +validarCredencial()
+    +resetPassword()
+    +verCatalogo()
+    +realizarPedido()
+    +verInformacionDePedido()
+    +consultarDatos()
+}
+class Almacenista{
+
+    -id: String
+    -userName: String
+    -email: String
+    -password: String
+--
+    +visualizarProductos()
+}
+class Productos{
+
+    -product_id: String
+    -product_name: String
+    -price: Double
+--
+    +visualizarProductos()
+}
+class Pedidos{
+
+    -product_id: String
+    -user_id: String
+    -cantidad: int
+    -fecha: LocalDate
+--
+    +visualizarPedido()
+}
+
+Almacenista -->Productos : uses
+Pedidos-->Productos: uses
+Pedidos -->Usuario: uses
+Almacenista -->Pedidos: uses
+@enduml

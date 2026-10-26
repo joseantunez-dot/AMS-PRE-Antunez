@@ -1,0 +1,13 @@
+@startuml
+start
+::Ingresa Usuario;
+::Validar Usuario;
+if(¿Es valido?) then(SI)
+    :Acceder Sitema;
+    :Visualizar catalogo;
+    :Historial de transacciones;
+else (No)
+    :Mostrar error;
+endif
+stop
+@enduml

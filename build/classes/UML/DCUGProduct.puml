@@ -1,0 +1,15 @@
+@startuml
+left to right direction 
+
+actor Almacenista
+
+rectangle "Gestion de Producto "{
+
+    usecase "Iniciar sesion" as UC1
+    usecase "Visualizar productos" as UC2
+}
+    Almacenista -- UC1
+    Almacenista -- UC2
+    UC1 .> UC2 : <<Extend>>
+    
+@enduml
